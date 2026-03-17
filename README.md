@@ -9,10 +9,15 @@ Para esta actividad usaremos la base de datos base creada para la actividad 1, t
 create database Act2;
 
 CREATE TABLE IF NOT EXISTS `Act2`.`CatPersonal` (
+
   `ID` INT NOT NULL AUTO_INCREMENT,
+  
   `Nombre` VARCHAR(80) NOT NULL,
+  
   `Cargo` VARCHAR(80) NOT NULL,
+  
   PRIMARY KEY (`ID`))
+  
 ENGINE = InnoDB;
 
 
