@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
+// Declaracion de las clases necesarias para la ejecución 
 
 namespace Act2_Interfaz_MySQL
 {
@@ -14,6 +15,7 @@ namespace Act2_Interfaz_MySQL
         public Act2_Interfaz_MySQL()
         {
             InitializeComponent();
+            // Inicializacion de los componentes.
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -28,6 +30,8 @@ namespace Act2_Interfaz_MySQL
             SendMessage(TxtPuerto.Handle, EM_SETCUEBANNER, 1, "Puerto de la BD");
             SendMessage(TxtBD.Handle, EM_SETCUEBANNER, 1, "Nombre de la BD");
         }
+        // Función para imitar el funcionamiento de la propiedad de PlaceHolder, con el fin de que sea más limpio y no
+        // afecte a futuras actualizaciones al momento de emplear bases de datos.
 
         private void BtnConectar_Click_1(object sender, EventArgs e)
         {
@@ -36,8 +40,10 @@ namespace Act2_Interfaz_MySQL
             string password = TxtContraseña.Text;
             string puerto = TxtPuerto.Text;
             string database = TxtBD.Text;
+            // Conversion de los datos ingresados a tipo String para futuras referencias
 
             string connectionString = BuildConnectionString(host, user, password, puerto, database);
+            // Sentencia para establecer conexion con la BD, pasando los atributos necesarios para la misma
 
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
@@ -48,6 +54,7 @@ namespace Act2_Interfaz_MySQL
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     DgvDatos.DataSource = dt;
+                    // Senbtencia para lograr la visualizacion de las filas de la tabla CatPersonal
                 }
                 catch (Exception ex)
                 {
@@ -55,6 +62,7 @@ namespace Act2_Interfaz_MySQL
                     MessageBox.Show("Ha ocurrido un error: " + ex.Message);
 
                 }
+                // Mensaje de error, en caso de no poder establecer conexion y mostrar los datos en el grid.
             }
         }
 
@@ -62,10 +70,12 @@ namespace Act2_Interfaz_MySQL
         {
             return $"SERVER={host};PORT={puerto};DATABASE={database};USER ID={user};PASSWORD={password};";
         }
+        // Sentencia que establece la conexion con la base de datos, usando como parametros los datos ingresados por el usuario
 
         private void TxtContraseña_TextChanged(object sender, EventArgs e)
         {
             TxtContraseña.PasswordChar = '*';
         }
+        // Creación de una sentencia para volver cada caracter de las contraseñas en *
     }
 }
