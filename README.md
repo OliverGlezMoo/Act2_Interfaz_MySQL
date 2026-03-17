@@ -6,28 +6,28 @@ Generación de una interfaz gráfica con conexión a MySQL.
 #### Base de datos
 Para esta actividad vamos a crear una base de datos usando como ejemplo la empleada en la actividad 1 de esta clase, tomando solo una clase CatPersonal.
 
-  create database Act2;
+    CREATE DATABASE Act2;
 
-  CREATE TABLE IF NOT EXISTS `Act2`.`CatPersonal` (
+    CREATE TABLE IF NOT EXISTS `Act2`.`CatPersonal` (
   
-    `ID` INT NOT NULL AUTO_INCREMENT,
+      `ID` INT NOT NULL AUTO_INCREMENT,
     
-    `Nombre` VARCHAR(80) NOT NULL,
+      `Nombre` VARCHAR(80) NOT NULL,
     
-    `Cargo` VARCHAR(80) NOT NULL,
+      `Cargo` VARCHAR(80) NOT NULL,
     
-    PRIMARY KEY (`ID`))
+      PRIMARY KEY (`ID`))
     
-  ENGINE = InnoDB;
+    ENGINE = InnoDB;
 
 #### Código
-Para el codigo emplee 5 textbox en lo cual el usuario rellenara segun los datos pertinentes pedidos.
+Para el codigo emplee 5 textbox en lo cual el usuario rellenara segun los datos pertinentes pedidos, a los cuales añadi una sentencia que imita la funcion Placeholder, para elimitar el uso de Label's
 
-DataGridView con el cual poder mostrar los datos (filas/registros) contenidos dentro de la tabla CatPersonal en la base de datos Act2
+DataGridView con el cual poder mostrar los datos (filas/registros) contenidos dentro de la tabla CatPersonal en la base de datos Act2.
 
 Boton conectar al cual al momento de dar clic establecera una conexion con nuestra base de datos empleando la clase MySql.Data.MySqlClient.
 
-A su vez es necesario agregar al proyecto el Paquete MySql.Data dentro de la seccion de herramientas como un administrador de paquetes NuGet
+A su vez es necesario agregar al proyecto el Paquete MySql.Data dentro de la seccion de herramientas como un administrador de paquetes NuGet.
 
 #### Evidencias
 <img width="596" height="279" alt="1" src="https://github.com/user-attachments/assets/506a0614-162f-479b-8b26-47fbc3f208d7" />
