@@ -6,20 +6,19 @@
 #### Base de datos
 Para esta actividad usaremos la base de datos base creada para la actividad 1, tomando como referencia el Entidad – Relación, del cual solo emplearemos la tabla CatPersonal.
 
-create database Act2;
+  create database Act2;
 
-CREATE TABLE IF NOT EXISTS `Act2`.`CatPersonal` (
+  CREATE TABLE IF NOT EXISTS `Act2`.`CatPersonal` (
 
-  `ID` INT NOT NULL AUTO_INCREMENT,
+    `ID` INT NOT NULL AUTO_INCREMENT,
   
-  `Nombre` VARCHAR(80) NOT NULL,
+    `Nombre` VARCHAR(80) NOT NULL,
   
-  `Cargo` VARCHAR(80) NOT NULL,
+    `Cargo` VARCHAR(80) NOT NULL,
   
-  PRIMARY KEY (`ID`))
+    PRIMARY KEY (`ID`))
   
-ENGINE = InnoDB;
-
+  ENGINE = InnoDB;
 
 #### Código
 
